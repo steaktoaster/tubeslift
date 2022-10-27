@@ -44,7 +44,7 @@ else :
 # asumsikan input dilakukan oleh sensor 
 while True : 
     for i in range (N) :
-        tanya = input("\napakah ada panggilan ? (ya/tidak)") # dijawab oleh sensor 
+        tanya = input("\napakah ada panggilan ? (ya/tidak) : ") # dijawab oleh sensor 
         if tanya ==  "ya" :
             lokasi    = int(input("lokasi lif : "))# di input oleh sensor
             if lokasi > N  or lokasi == 0:
@@ -110,8 +110,9 @@ while True :
             time.sleep(2)
             print("buka pintu lift")
         lokasi = tujuan
+        time.sleep(2)
         print("tutup pintu lift")
-        pertanyan = str(input("apakah ada input dalam waktu 3 detik ? (ya/tidak)")) #dijawab oleh sensor
+    pertanyan = str(input("apakah ada input dalam waktu 3 detik ? (ya/tidak) : ")) #dijawab oleh sensor
     if pertanyan == "tidak" :
         break 
-print("lift idle") # informasi ke prosesor lift
+print("\nlift idle") # informasi ke prosesor lift
