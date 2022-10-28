@@ -69,12 +69,19 @@ while True :
                 time.sleep(2)
                 print("'lift membuka pintu lift'")
             lokasi = panggilan
-        else : 
-            break
+        else :
+            pass
     
 # input di dalam lift  
 # asumsikan input dilakukan oleh tombol dan sensor  
-        for j in range (N) : 
+        quest  = input("apakah ada input dari dalam ? (ya/tidak) : ")
+        if quest == "tidak" :
+            break
+        for j in range (N) :
+            lokasi    = int(input("lokasi lif : "))# di input oleh sensor
+            if lokasi > N  or lokasi == 0:
+                print("input lokasi lift salah")
+                break
             beban = float(input("beban penumpang lift : ")) # diinput oleh sensor
             if beban <= bebanmax :
                break
@@ -114,5 +121,5 @@ while True :
         print("tutup pintu lift")
     pertanyan = str(input("apakah ada input dalam waktu 3 detik ? (ya/tidak) : ")) #dijawab oleh sensor
     if pertanyan == "tidak" :
-        break 
+        break
 print("\nlift idle") # informasi ke prosesor lift
